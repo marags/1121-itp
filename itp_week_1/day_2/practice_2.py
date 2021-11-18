@@ -15,6 +15,6 @@
 user_entry = int(input("Enter a number from 1 - 9 ")) #no input validation
 mult_by_2 = user_entry * 2
 add_10 = mult_by_2 + 10
-divide_in_half = add_10 // 2 #integer division
+divide_in_half = add_10 // 2 #integer division - do not use /
 final_number = divide_in_half - user_entry
 print(final_number)
