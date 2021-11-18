@@ -6,9 +6,20 @@ print('      /|')
 print('     / |')
 print('    /  |')
 print('   /___|')
-
+print('')
 # recreate this triangle with a height of 6
-
+print('      /|')
+print('     / |')
+print('    /  |')
+print('   /   |')
+print('  /    |')
+print(' /_____|')
+print('')
 # recreate the 4 level triangle with a single line using \n
-
+print('      /|\n     / |\n    /  |\n   /___|\n')
+print('')
 #recreate the 4 level triangle using a multi-line string
+print('''      /|
+     / |
+    /  |
+   /___|''')
