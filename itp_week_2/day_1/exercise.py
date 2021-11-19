@@ -14,10 +14,15 @@ inventory = {
 
 for item in inventory:
     # decrement item by using an assignment operator (Day 2 Lecture line #130)
-
+    inventory[item] -= 1
     # NOTE: recall that item represents the key of the key:value pair
 
 # SCENARIO: REMOVE ANY 0 ITEMS
 
-for item in inventory:
+### Python 3 solution to removing items in dictionary within a for loop
+for key, value in dict(inventory).items():
     # use an if statement to check if the value is 0 and then remove it
+    if value == 0:
+        del inventory[key]
+
+print(inventory)
