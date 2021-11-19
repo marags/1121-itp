@@ -9,7 +9,7 @@ for letter in lowercase:
     print(letter)
 # 2. loop through the lowercase and print the capitalization of each element
 for letter in lowercase:
-    print(letter.upper())
+    print(letter.capitalize()) #upper() works the same
 # MEDIUM
 
 # 1. create a new variable called uppercase with an empty list
@@ -49,12 +49,14 @@ has_special_char = False
 for value in password:
     if value in lowercase:
         has_lowercase = True
-    if value in uppercase:
+    elif value in uppercase:
         has_uppercase = True
-    if value in special_char:
+    elif value in special_char:
         has_special_char = True
-    if value.isdigit():
+    elif int(value) in range(1,10):
         has_number = True
+    #elif value.isdigit():
+    #     has_number = True
 
 # 4. do a final check to see if all of your variables are TRUE
 # by using the AND operator for all 4 conditions. (This is done for you, uncomment below)
