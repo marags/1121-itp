@@ -21,7 +21,7 @@
 import openpyxl
 
 #Assign your .xlsx file to a variable
-# filename = "path/to/your/excel"
+filename = "/Users/Dev/Code/Git_Repositories/VetsInTech/Python Fundamentals/1121-itp/itp_week_3/day_3/lecture.xlsx"
 openpyxl.load_workbook(filename) #returns a Workbook object.
 my_workbook = openpyxl.load_workbook('example.xlsx')
 #use the 'type' method on the new variable to verify what kind of data type you are working with
