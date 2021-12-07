@@ -22,7 +22,7 @@
  "felineIQ": null}
 
 
-# JSON is useful because it can allow programs to interact with a website.  This is called and API, or Application Program Interface.  Accessing an API is the same as accessing any other web page via a URL. The difference is that the data returned by an API is formatted (with JSON, for example) for machines. 
+# JSON is useful because it can allow programs to interact with a website.  This is called an API, or Application Program Interface.  Accessing an API is the same as accessing any other web page via a URL. The difference is that the data returned by an API is formatted (with JSON, for example) for machines. 
 
 # Many websites make their data available in JSON format.
 
