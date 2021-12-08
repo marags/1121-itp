@@ -3,33 +3,35 @@ import openpyxl
 import json
 import requests
 
+# Prepare OpenPyXl with appropriate worksheet
+
 wb = openpyxl.load_workbook("/Users/Dev/Code/Git_Repositories/VetsInTech/Python Fundamentals/1121-itp/itp_week_3/day_4/lecture.xlsx")
-r = requests.get("https://rickandmortyapi.com/api/character")
-wb.create_sheet("RickAndMorty")
-# print(wb.sheetnames)
-data = json.loads(r.text)
 
-sheet = wb["RickAndMorty"]
-sheet["A1"] = "Name"
-sheet["B1"] = "Status"
-sheet["C1"] = "Species"
-sheet["D1"] = "Gender"
+wb.create_sheet('Rick and Morty')
+ws = wb['Rick and Morty']
 
+# Headers
+ws["A1"] = "Name"
+ws["B1"] = "Status"
+ws["C1"] = "Species"
+ws["D1"] = "Gender"
 
-# Create a new worksheet
-# assign new worksheet to a variable
-# and create the following columns and populate the data from the API
-    # Name
-    # Status
-    # Species
-    # Gender
+# Prepare the json and requests for API calls
 
-# print(data['results'][0]['name']) 
+api_url = "https://rickandmortyapi.com/api/character?page="
 
-for i in range(20):
-    sheet["A" + str(i + 2)] = data['results'][i]['name']
-    sheet["B" + str(i + 2)] = data['results'][i]['status']
-    sheet["C" + str(i + 2)] = data['results'][i]['species']
-    sheet["D" + str(i + 2)] = data['results'][i]['gender']
+row_offset = 0
 
+for i in range(1, 43):
+    api_url_iter = api_url + str(i)
+    r = requests.get(api_url_iter)
+    data = json.loads(r.text)
+
+    for j in range(1, len(data['results']) + 1):
+        ws["A" + str(row_offset + j+1)] = data['results'][j-1]['name']
+        ws["B" + str(row_offset + j+1)] = data['results'][j-1]['status']
+        ws["C" + str(row_offset + j+1)] = data['results'][j-1]['species']
+        ws["D" + str(row_offset + j+1)] = data['results'][j-1]['gender']
+    row_offset += 20
+    
 wb.save("/Users/Dev/Code/Git_Repositories/VetsInTech/Python Fundamentals/1121-itp/itp_week_3/day_4/rickandmorty.xlsx")
