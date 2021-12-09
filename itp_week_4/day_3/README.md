@@ -8,6 +8,15 @@
 
 ## Exercise Review
 
+- Lists
+- Dictionaries
+- OpenPyXl
+- Functions
+- Modules
+- JSON
+- Requests
+- Iteration (loops)
+
 ### Resources
 
 - []()
